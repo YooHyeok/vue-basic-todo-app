@@ -109,6 +109,16 @@
 - 의존성 버전정보: [레퍼런스](https://mong-blog.tistory.com/entry/npm-packagejson%EC%9D%98-version-%EB%B0%A9%EC%8B%9D-tilde%EC%99%80-caret#google_vignette)
 <br>
 
+### [index.html](v01/index.html)
+`npm run dev` 명령을 실행했을 때 제일 첫 번째로 참조하는 파일이다.  
+index.html 파일에서 모든것이 시작된다.  
+```html
+<div id="app"></div>
+<script type="module" src="/src/main.js"></script>
+```
+위 script태그를 통해 /src/main.js 파일을 include 하고 있으며, 해당 파일을 실행해서 결과를 #app div 영역에 렌더링을 시켜준다고 보면 된다.  
+<br>
+
 </details>
 <br>
 
