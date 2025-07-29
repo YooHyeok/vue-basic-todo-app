@@ -91,4 +91,34 @@
 </details>
 
 
+## 프로젝트 파일 구성
+<details>
+<summary>접기/펼치기</summary>
+<br>
+
+### [package.json](v01/package.json)
+애플리케이션 정보, 의존성 모듈(dependencies) 정보, 스크립트 명령어 정보 등을 담고 있다.  
+- name: 패키지 정보
+- version: 버전 정보
+- private: 비공개 여부(npm 패키지 저장소 발행(publish) 여부)
+- type: 모듈 타입 - module일 경우 CJS
+- script: 스크립트 명령어 정의
+- dependencies: 의존성 모듈(개발 및 런타임 모든 환경에서 사용됨)
+- devDependencies: 개발 의존성 모듈(런타임을 제외한 개발 환경에서만 사용됨)
+
+- 의존성 버전정보: [레퍼런스](https://mong-blog.tistory.com/entry/npm-packagejson%EC%9D%98-version-%EB%B0%A9%EC%8B%9D-tilde%EC%99%80-caret#google_vignette)
+<br>
+
+</details>
+<br>
+
+
 ## [v01/README.md](v01/README.md)
+
+## 템플릿
+<details>
+<summary>접기/펼치기</summary>
+<br>
+
+</details>
+<br>
