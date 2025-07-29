@@ -119,6 +119,20 @@ index.html 파일에서 모든것이 시작된다.
 위 script태그를 통해 /src/main.js 파일을 include 하고 있으며, 해당 파일을 실행해서 결과를 #app div 영역에 렌더링을 시켜준다고 보면 된다.  
 <br>
 
+### [/src/main.js](v01/src/main.js)
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+
+createApp(App).mount('#app')
+
+```
+vue라는 모듈로부터 제공되는 createApp()을 통해 뷰 인스턴스를 생성한다.  
+자바스크립트는 객체지향언어다 보니 모듈을 사용할 때 인스턴스를 생성하는 방식으로 사용한다.  
+Vue2에서는 생성자 함수를 호출해 Vue인스턴스를 만들었으나, Vue3에서는 팩토리 함수 패턴을 통해 Vue인스턴스를 반환한다.  
+App.vue 라는 컴포넌트 파일의 내용을 기준으로 뷰 인스턴스를 생성한 뒤 mount('#app')를 통해 app이라는 id를 갖는 영역에 연결한다.  
+즉, Vue 인스턴싱 된 객체가 index.html의 #app div에 마운팅되어 해당 영역에 렌더링이 이루어지게 된다.  
+
 </details>
 <br>
 
