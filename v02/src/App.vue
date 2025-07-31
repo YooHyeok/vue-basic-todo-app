@@ -8,6 +8,12 @@ export default {
       y: `<b style="color:red;">너무졸려요</b>`,
       bool: false,
       score: 69,
+      sports: [
+        'Baseball',
+        'Football',
+        'Volleyball',
+        'Swimming',
+      ]
     }
   },
 }
@@ -40,6 +46,16 @@ export default {
   <!-- v-show: v-if~else-if~else와는 다르게 display:none style이 적용 - 스타일로 처리되므로 조건 변경 빈도가 잦을때 사용하는것이 합리적 -->
   <h1 v-show="!bool >= 100">이 영역은 v-show에서 처리하고 있습니다.</h1>
 
+  <!-- v-for: 요소 순회 -->
+  <ul>
+    <li>{{ sports[0] }}</li>
+    <li>{{ sports[1] }}</li>
+    <li>{{ sports[2] }}</li>
+    <li>{{ sports[3] }}</li>
+  </ul>
+  <ul>
+    <li v-for="(sport, index) in sports" :key="index">{{ index + 1 }} {{ sport }}</li>
+  </ul>
 </template>
 
 <style scoped>
