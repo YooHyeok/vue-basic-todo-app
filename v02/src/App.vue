@@ -7,6 +7,7 @@ export default {
       subscribe: 2677,
       y: `<b style="color:red;">너무졸려요</b>`,
       bool: false,
+      score: 69,
     }
   },
 }
@@ -30,6 +31,14 @@ export default {
 
   <!-- v-pre: DOM 컴파일 제외 - 중괄호를 포함한 보간법 문법을 텍스트노드로 출력 -->
   <h1 v-pre>{{ channel }}</h1>
+
+  <!-- v-if / v-else-if / v-else : 순수 if는 단독사용 가능 / else가 포함되었다면 if가 선행되어야 함 -->
+  <h1 v-if="score >= 90">평점 : A</h1>
+  <h1 v-else-if="score >= 80">평점 : B</h1>
+  <h1 v-else-if="score >= 70">평점 : C</h1>
+  <h1 v-else>평점 : D</h1>
+  <!-- v-show: v-if~else-if~else와는 다르게 display:none style이 적용 - 스타일로 처리되므로 조건 변경 빈도가 잦을때 사용하는것이 합리적 -->
+  <h1 v-show="!bool >= 100">이 영역은 v-show에서 처리하고 있습니다.</h1>
 
 </template>
 
