@@ -7,6 +7,7 @@ export default {
       subscribe: 2677,
       y: `<b style="color:red;">너무졸려요</b>`,
       bool: false,
+    }
   },
 }
 </script>
@@ -26,6 +27,9 @@ export default {
   <h1>{{ y }}</h1>
   <h1 v-text="y"></h1>
   <h1 v-html="y"></h1>
+
+  <!-- v-pre: DOM 컴파일 제외 - 중괄호를 포함한 보간법 문법을 텍스트노드로 출력 -->
+  <h1 v-pre>{{ channel }}</h1>
 
 </template>
 
