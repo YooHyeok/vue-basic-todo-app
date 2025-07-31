@@ -5,8 +5,8 @@ export default {
     return {
       chennel: "유혁스쿨",
       subscribe: 2677,
+      y: `<b style="color:red;">너무졸려요</b>`,
       bool: false,
-    }
   },
 }
 </script>
@@ -21,6 +21,11 @@ export default {
   <h1 v-text="chennel"></h1>
   <h1 v-text="subscribe"></h1>
   <h1 v-text="bool ? 'true' : 'false'"></h1>
+
+  <!-- v-html: html 태그를 표현 - 순수 js의 innerHtml과 같음 -->
+  <h1>{{ y }}</h1>
+  <h1 v-text="y"></h1>
+  <h1 v-html="y"></h1>
 
 </template>
 
