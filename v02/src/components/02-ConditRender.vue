@@ -11,7 +11,11 @@ export default {
 </script>
 <template>
   <div>
-
+    <hr/>
+    <a target="_blank" href="https://github.com/YooHyeok/vue-basic-todo-app/blob/main/v02/src/components/02-ConditRender.vue" style="text-decoration: none; color: blue;">
+      <h1 style="cursor: pointer;">코드 보러 가기</h1>
+    </a>
+    <hr/>
     <input type="text" placeholder="평점을 입력하세요" v-model="score">
     <button v-on:click="score=null || ''">초기화</button>
     <h1>v-if 디렉티브</h1>

@@ -13,6 +13,11 @@ export default {
 </script>
 <template>
   <div>
+    <hr/>
+    <a target="_blank" href="https://github.com/YooHyeok/vue-basic-todo-app/blob/main/v02/src/components/01-DataBind.vue" style="text-decoration: none; color: blue;">
+      <h1 style="cursor: pointer;">코드 보러 가기</h1>
+    </a>
+    <hr/>
      <!-- Text Interpolation(보간법): {{ 상태변수 등 값 }} 형태로 사용 - Mustache문법 이라고도 불린다 -->
     <h2>Text Interpolation(보간법)</h2>
     <h5>채널명 : {{ chennel }}</h5>

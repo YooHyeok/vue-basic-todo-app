@@ -15,6 +15,11 @@ export default {
 </script>
 <template>
   <div>
+    <hr/>
+    <a target="_blank" href="https://github.com/YooHyeok/vue-basic-todo-app/blob/main/v02/src/components/03-LoopRender.vue" style="text-decoration: none; color: blue;">
+      <h1 style="cursor: pointer;">코드 보러 가기</h1>
+    </a>
+    <hr/>
      <!-- v-for: 요소 순회 -->
     <span>순수 출력</span>
     <ul>
