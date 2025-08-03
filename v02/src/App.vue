@@ -4,6 +4,7 @@ import ConditRender from '@/components/02-ConditRender.vue';
 import LoopRender from '@/components/03-LoopRender.vue';
 import EventBind from '@/components/04-EventBind.vue';
 import Methods from '@/components/05-Methods.vue';
+import Modifier from '@/components/06-Modifier.vue';
 export default {
   components: {
     DataBind,
@@ -11,6 +12,7 @@ export default {
     LoopRender,
     EventBind,
     Methods,
+    Modifier
   },
   // data: function() {
   data() {
@@ -28,6 +30,7 @@ export default {
     <button @click="activeTab = 'LoopRender'">반복 렌더링</button>
     <button @click="activeTab = 'EventBind'">이벤트 바인드</button>
     <button @click="activeTab = 'Methods'">메소드 속성</button>
+    <button @click="activeTab = 'Modifier'">수정자</button>
   </div>
 
   <!-- 구분선 -->
@@ -37,6 +40,8 @@ export default {
   <LoopRender v-else-if="activeTab == 'LoopRender'" />
   <EventBind v-else-if="activeTab == 'EventBind'" />
   <Methods v-else-if="activeTab == 'Methods'" />
+  <Modifier v-else-if="activeTab == 'Modifier'" /> 
+
 </template>
 
 <style scoped>
