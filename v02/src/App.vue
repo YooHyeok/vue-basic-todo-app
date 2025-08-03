@@ -1,5 +1,9 @@
 <script>
+import V_ON from '@/components/05-v-on.vue';
 export default {
+  components: {
+    V_ON
+  },
   // data: function() {
   data() {
     return {
@@ -13,13 +17,13 @@ export default {
         'Football',
         'Volleyball',
         'Swimming',
-      ]
+      ],
+      count: 0
     }
   },
 }
 </script>
 <template>
-
   <!-- Text Interpolation(보간법): {{ 상태변수 등 값 }} 형태로 사용 - Mustache문법 이라고도 불린다 -->
   <h1>채널명 : {{ chennel }}</h1>
   <h2>구독자수 : {{ subscribe }}</h2>
@@ -56,6 +60,14 @@ export default {
   <ul>
     <li v-for="(sport, index) in sports" :key="index">{{ index + 1 }} {{ sport }}</li>
   </ul>
+  <!-- v-on: 엘리먼트에 발생한 이벤트를 캐치해준다.  -->
+  <div>
+    <p>count: {{ count }}</p>
+    <button v-on:click="count++">증가(클릭)</button>
+    <button v-on:click="count--">감소(클릭)</button>
+    <button v-on:mouseover="count=0">0으로 초기화(오버)</button>
+  </div>
+
 </template>
 
 <style scoped>
