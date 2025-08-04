@@ -18,8 +18,9 @@ export default {
     <hr/>
     <p>count: {{ count }}</p>
     <button v-on:click="count++">증가(클릭)</button>
-    <button v-on:click="count--">감소(클릭)</button>
-    <button v-on:mouseover="count=0">0으로 초기화(오버)</button>
+    <!-- @이벤트명 : v-on:이벤트명 의 축약형 -->
+    <button @click="count--">감소(클릭)</button>
+    <button @mouseover="count=0">0으로 초기화(오버)</button>
   </div>
 
 </template>
