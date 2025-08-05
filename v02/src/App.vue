@@ -6,6 +6,7 @@ import EventBind from '@/components/04-EventBind.vue';
 import Methods from '@/components/05-Methods.vue';
 import Modifier from '@/components/06-Modifier.vue';
 import VBind from '@/components/07-VBind.vue';
+import VModel from '@/components/08-VModel.vue';
 export default {
   components: {
     DataBind,
@@ -15,6 +16,7 @@ export default {
     Methods,
     Modifier,
     VBind,
+    VModel,
   },
   // data: function() {
   data() {
@@ -34,6 +36,7 @@ export default {
     <button @click="activeTab = 'Methods'">메소드 속성</button>
     <button @click="activeTab = 'Modifier'">수정자</button>
     <button @click="activeTab = 'VBind'">DOM 속성 동적 바인딩</button>
+    <button @click="activeTab = 'VModel'">양방향 바인딩</button>
   </div>
 
   <!-- 구분선 -->
@@ -44,8 +47,8 @@ export default {
   <EventBind v-else-if="activeTab == 'EventBind'" />
   <Methods v-else-if="activeTab == 'Methods'" />
   <Modifier v-else-if="activeTab == 'Modifier'" /> 
-  <VBind v-else-if="activeTab == 'VBind'" />
-
+  <VBind v-else-if="activeTab == 'VBind'" /> 
+  <VModel v-else-if="activeTab == 'VModel'" />
 </template>
 
 <style scoped>
