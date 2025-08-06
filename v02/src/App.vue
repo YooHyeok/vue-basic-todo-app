@@ -19,6 +19,7 @@ export default {
     VBind,
     VModel,
     ClassBind,
+    StyleBind,
   },
   // data: function() {
   data() {
@@ -40,6 +41,7 @@ export default {
     <button @click="activeTab = 'VBind'">DOM 속성 동적 바인딩</button>
     <button @click="activeTab = 'VModel'">양방향 바인딩</button>
     <button @click="activeTab = 'ClassBind'">클래스 바인딩</button>
+    <button @click="activeTab = 'StyleBind'">스타일 바인딩</button>
   </div>
 
   <!-- 구분선 -->
@@ -53,6 +55,7 @@ export default {
   <VBind v-else-if="activeTab == 'VBind'" /> 
   <VModel v-else-if="activeTab == 'VModel'" /> 
   <ClassBind v-else-if="activeTab == 'ClassBind'" /> 
+  <StyleBind v-else-if="activeTab == 'StyleBind'" /> 
 
 </template>
 
