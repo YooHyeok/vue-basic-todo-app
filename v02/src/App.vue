@@ -8,6 +8,8 @@ import Modifier from '@/components/06-Modifier.vue';
 import VBind from '@/components/07-VBind.vue';
 import VModel from '@/components/08-VModel.vue';
 import ClassBind from '@/components/09-ClassBind.vue';
+import StyleBind from '@/components/10-StyleBind.vue';
+import Computed from '@/components/11-Computed.vue';
 export default {
   components: {
     DataBind,
@@ -20,6 +22,7 @@ export default {
     VModel,
     ClassBind,
     StyleBind,
+    Computed,
   },
   // data: function() {
   data() {
@@ -42,6 +45,7 @@ export default {
     <button @click="activeTab = 'VModel'">양방향 바인딩</button>
     <button @click="activeTab = 'ClassBind'">클래스 바인딩</button>
     <button @click="activeTab = 'StyleBind'">스타일 바인딩</button>
+    <button @click="activeTab = 'Computed'">계산된 속성</button>
   </div>
 
   <!-- 구분선 -->
@@ -56,6 +60,7 @@ export default {
   <VModel v-else-if="activeTab == 'VModel'" /> 
   <ClassBind v-else-if="activeTab == 'ClassBind'" /> 
   <StyleBind v-else-if="activeTab == 'StyleBind'" /> 
+  <Computed v-else-if="activeTab == 'Computed'" /> 
 
 </template>
 
