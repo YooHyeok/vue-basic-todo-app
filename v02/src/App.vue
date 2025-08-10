@@ -12,7 +12,7 @@ import StyleBind from '@/components/10-StyleBind.vue';
 import Computed from '@/components/11-Computed.vue';
 import Watch from '@/components/12-Watch.vue';
 import Component from '@/components/13-Component.vue';
-
+import LifeCycle from '@/components/14-LifeCycle.vue';
 export default {
   components: {
     DataBind,
@@ -28,6 +28,7 @@ export default {
     Computed,
     Watch,
     Component,
+    LifeCycle,
   },
   // data: function() {
   data() {
@@ -53,6 +54,7 @@ export default {
     <button @click="activeTab = 'Computed'">계산된 속성</button>
     <button @click="activeTab = 'Watch'">Watcher 감시자</button>
     <button @click="activeTab = 'Component'">컴포넌트</button>
+    <button @click="activeTab = 'LifeCycle'">라이프사이클과 훅</button>
   </div>
 
   <!-- 구분선 -->
@@ -70,6 +72,7 @@ export default {
   <Computed v-else-if="activeTab == 'Computed'" /> 
   <Watch v-else-if="activeTab == 'Watch'" /> 
   <Component v-else-if="activeTab == 'Component'" /> 
+  <LifeCycle v-else-if="activeTab == 'LifeCycle'" /> 
 
 </template>
 
