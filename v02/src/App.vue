@@ -11,6 +11,8 @@ import ClassBind from '@/components/09-ClassBind.vue';
 import StyleBind from '@/components/10-StyleBind.vue';
 import Computed from '@/components/11-Computed.vue';
 import Watch from '@/components/12-Watch.vue';
+import Component from '@/components/13-Component.vue';
+
 export default {
   components: {
     DataBind,
@@ -25,6 +27,7 @@ export default {
     StyleBind,
     Computed,
     Watch,
+    Component,
   },
   // data: function() {
   data() {
@@ -49,6 +52,7 @@ export default {
     <button @click="activeTab = 'StyleBind'">스타일 바인딩</button>
     <button @click="activeTab = 'Computed'">계산된 속성</button>
     <button @click="activeTab = 'Watch'">Watcher 감시자</button>
+    <button @click="activeTab = 'Component'">컴포넌트</button>
   </div>
 
   <!-- 구분선 -->
@@ -65,6 +69,7 @@ export default {
   <StyleBind v-else-if="activeTab == 'StyleBind'" /> 
   <Computed v-else-if="activeTab == 'Computed'" /> 
   <Watch v-else-if="activeTab == 'Watch'" /> 
+  <Component v-else-if="activeTab == 'Component'" /> 
 
 </template>
 
