@@ -14,6 +14,7 @@ import Watch from '@/components/12-Watch.vue';
 import Component from '@/components/13-Component.vue';
 import LifeCycle from '@/components/14-LifeCycle.vue';
 import Refs from '@/components/15-Refs.vue';
+import Props from '@/components/16-Props.vue'
 
 export default {
   components: {
@@ -32,6 +33,7 @@ export default {
     Component,
     LifeCycle,
     Refs,
+    Props,
   },
   // data: function() {
   data() {
@@ -59,6 +61,7 @@ export default {
     <button @click="activeTab = 'Component'">컴포넌트</button>
     <button @click="activeTab = 'LifeCycle'">라이프사이클과 훅</button>
     <button @click="activeTab = 'Refs'">Refs DOM 접근</button>
+    <button @click="activeTab = 'Props'">Props 단방향 데이터 흐름</button>
   </div>
 
   <!-- 구분선 -->
@@ -78,6 +81,7 @@ export default {
   <Component v-else-if="activeTab == 'Component'" /> 
   <LifeCycle v-else-if="activeTab == 'LifeCycle'" /> 
   <Refs v-else-if="activeTab == 'Refs'" /> 
+  <Props v-else-if="activeTab == 'Props'" /> 
 
 </template>
 
