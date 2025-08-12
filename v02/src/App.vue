@@ -16,6 +16,7 @@ import LifeCycle from '@/components/14-LifeCycle.vue';
 import Refs from '@/components/15-Refs.vue';
 import Props from '@/components/16-Props.vue'
 import Emits from '@/components/17-Emits.vue'
+import Parent from '@/components/18-Parent.vue'
 
 export default {
   components: {
@@ -36,6 +37,7 @@ export default {
     Refs,
     Props,
     Emits,
+    Parent,
   },
   // data: function() {
   data() {
@@ -65,6 +67,7 @@ export default {
     <button @click="activeTab = 'Refs'">Refs DOM 접근</button>
     <button @click="activeTab = 'Props'">Props 단방향 데이터 흐름</button>
     <button @click="activeTab = 'Emits'">Emits 이벤트 요청</button>
+    <button @click="activeTab = 'Parent'">Parent</button>
   </div>
 
   <!-- 구분선 -->
@@ -86,6 +89,7 @@ export default {
   <Refs v-else-if="activeTab == 'Refs'" /> 
   <Props v-else-if="activeTab == 'Props'" /> 
   <Emits v-else-if="activeTab == 'Emits'" /> 
+  <Parent v-else-if="activeTab == 'Parent'" /> 
 
 </template>
 
