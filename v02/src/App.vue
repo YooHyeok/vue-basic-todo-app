@@ -18,6 +18,7 @@ import Props from '@/components/16-Props.vue'
 import Emits from '@/components/17-Emits.vue'
 import Parent from '@/components/18-Parent.vue'
 import ProvideInject from '@/components/19-ProvideInject.vue'
+import Slot from '@/components/20-Slot.vue'
 
 export default {
   components: {
@@ -40,6 +41,7 @@ export default {
     Emits,
     Parent,
     ProvideInject,
+    Slot,
   },
   // data: function() {
   data() {
@@ -71,6 +73,7 @@ export default {
     <button @click="activeTab = 'Emits'">Emits 이벤트 요청</button>
     <button @click="activeTab = 'Parent'">Parent</button>
     <button @click="activeTab = 'ProvideInject'">ProvideInject</button>
+    <button @click="activeTab = 'Slot'">Slot</button>
   </div>
 
   <!-- 구분선 -->
@@ -94,6 +97,7 @@ export default {
   <Emits v-else-if="activeTab == 'Emits'" /> 
   <Parent v-else-if="activeTab == 'Parent'" /> 
   <ProvideInject v-else-if="activeTab == 'ProvideInject'" /> 
+  <Slot v-else-if="activeTab == 'Slot'" /> 
 
 </template>
 
