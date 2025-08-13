@@ -17,6 +17,7 @@ import Refs from '@/components/15-Refs.vue';
 import Props from '@/components/16-Props.vue'
 import Emits from '@/components/17-Emits.vue'
 import Parent from '@/components/18-Parent.vue'
+import ProvideInject from '@/components/19-ProvideInject.vue'
 
 export default {
   components: {
@@ -38,6 +39,7 @@ export default {
     Props,
     Emits,
     Parent,
+    ProvideInject,
   },
   // data: function() {
   data() {
@@ -68,6 +70,7 @@ export default {
     <button @click="activeTab = 'Props'">Props 단방향 데이터 흐름</button>
     <button @click="activeTab = 'Emits'">Emits 이벤트 요청</button>
     <button @click="activeTab = 'Parent'">Parent</button>
+    <button @click="activeTab = 'ProvideInject'">ProvideInject</button>
   </div>
 
   <!-- 구분선 -->
@@ -90,6 +93,7 @@ export default {
   <Props v-else-if="activeTab == 'Props'" /> 
   <Emits v-else-if="activeTab == 'Emits'" /> 
   <Parent v-else-if="activeTab == 'Parent'" /> 
+  <ProvideInject v-else-if="activeTab == 'ProvideInject'" /> 
 
 </template>
 
