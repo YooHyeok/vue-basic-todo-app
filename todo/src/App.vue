@@ -5,6 +5,16 @@ export default {
   components: {
     TodoInput,
     TodoList,
+  },
+  data() {
+    return {
+      todoList: []
+    }
+  },
+  methods: {
+    todoInput(msg) {
+      console.log("msg: ", msg)
+    }
   }
 }
 </script>
@@ -12,7 +22,7 @@ export default {
 <template>
   <div class="todo-container">
     <h1>TODO List</h1>
-    <TodoInput/>
+    <TodoInput @todo-input="todoInput"/>
     <TodoList/>
   </div>
 </template>
