@@ -8,6 +8,7 @@ import Computed from './components/03-Computed.vue'
 import Watch from './components/04-Watch.vue'
 import WatchEffect from './components/05-WatchEffect.vue'
 import Props from './components/06-DefineProps&toRefs.vue'
+import DefineEmits from './components/07-DefineEmits.vue'
 
 const activeTab = ref('Counter')
 
@@ -22,6 +23,7 @@ const activeTab = ref('Counter')
     <button @click="activeTab = 'Watch'">Watch 예제</button>
     <button @click="activeTab = 'WatchEffect'">WatchEffect 예제</button>
     <button @click="activeTab = 'Props'">DefineProps&toRefs 예제</button>
+    <button @click="activeTab = 'DefineEmits'">DefineEmits 예제</button>
   </div>
 
   <!-- 구분선 -->
@@ -33,6 +35,7 @@ const activeTab = ref('Counter')
   <Watch v-if="activeTab == 'Watch'" />
   <WatchEffect v-if="activeTab == 'WatchEffect'" />
   <Props v-if="activeTab == 'Props'" />
+  <DefineEmits v-if="activeTab == 'DefineEmits'" />
   
 </template>
 
