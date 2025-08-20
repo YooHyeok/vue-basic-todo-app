@@ -116,7 +116,7 @@ watch(
 </script>
 
 <template>
-  <a target="_blank" href="https://github.com/YooHyeok/vue-basic-todo-app/blob/main/v03/src/components/04-Watch" style="text-decoration: none; color: blue;">
+  <a target="_blank" href="https://github.com/YooHyeok/vue-basic-todo-app/blob/main/v03/src/components/04-Watch.vue" style="text-decoration: none; color: blue;">
     <h1 style="cursor: pointer;">코드 보러 가기</h1>
   </a>
   <hr/>

@@ -14,7 +14,7 @@ const maerong = (msg) => {
     <h1 style="cursor: pointer;">코드 보러 가기</h1>
   </a>
   <hr/>
-  <h1>DefineProps</h1>
+  <h1>DefineEmits</h1>
   <Child @maerong="maerong" />
 </template>
 
