@@ -11,6 +11,7 @@ import Props from './components/06-DefineProps&toRefs.vue'
 import DefineEmits from './components/07-DefineEmits.vue'
 import EventBind from './components/08-EventBind.vue'
 import DefineModel from './components/09-DefineModel.vue'
+import ProvideInject from './components/10-Provide&Inject.vue'
 
 const activeTab = ref('Counter')
 
@@ -28,6 +29,7 @@ const activeTab = ref('Counter')
     <button @click="activeTab = 'DefineEmits'">DefineEmits 예제</button>
     <button @click="activeTab = 'EventBind'">EventBind 예제</button>
     <button @click="activeTab = 'DefineModel'">DefineModel 예제</button>
+    <button @click="activeTab = 'ProvideInject'">Provide&Inject 예제</button>
   </div>
 
   <!-- 구분선 -->
@@ -42,6 +44,7 @@ const activeTab = ref('Counter')
   <DefineEmits v-if="activeTab == 'DefineEmits'" />
   <EventBind v-if="activeTab == 'EventBind'" />
   <DefineModel v-if="activeTab == 'DefineModel'" />
+  <ProvideInject v-if="activeTab == 'ProvideInject'" />
   
 </template>
 
