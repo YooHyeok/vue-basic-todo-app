@@ -22,7 +22,7 @@ const getData = () => {
   .then(res => {
     const members = res.data
     let htmlContent = `
-    <table border="1">
+    <table class="table ms-3 me-3">
       <tr>
         <th>Id</th>
         <th>Name</th>
@@ -44,8 +44,8 @@ const getData = () => {
 </script>
 
 <template>
-  <button @click="inputData">데이터 입력</button>
-  <button @click="getData">데이터 가져오기</button>
+  <button @click="inputData" class="btn btn-primary ms-3">데이터 입력</button>
+  <button @click="getData" class="btn btn-success ms-3">데이터 가져오기</button>
   <div ref="table">
 
   </div>
