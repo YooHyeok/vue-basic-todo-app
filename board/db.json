@@ -3,14 +3,19 @@
   "apiurl": "http://localhost:3000/member",
   "member": [
     {
-      "id": 1,
+      "id": "1",
       "name": "홍길동",
       "email": "aaa@gmail.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "전우치",
       "email": "aab@gmail.com"
+    },
+    {
+      "id": "a4bb",
+      "name": "유혁",
+      "email": "yh@gmail.com"
     }
   ]
 }
