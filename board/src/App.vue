@@ -3,6 +3,9 @@ import axios from 'axios'
 import { ref } from 'vue'
 
 const table = ref(null)
+const isInputMode = ref(false)
+const name = ref('')
+const email = ref('')
 
 /* ===================== propmise then catch ===================== */
 const inputData = () => {
@@ -10,6 +13,7 @@ const inputData = () => {
   .then(res => {
     console.debug("전송완료\n응답상세내용: ", res)
     console.table(res)
+    getData();
   })
   .catch(err => console.error("서버에 이상이 있습니다\n오류상세내용: ", err))
   console.log("비동기적 호출")
@@ -26,6 +30,7 @@ const inputDataAsync = async () => {
     const res = await inputDataAxios();
     console.debug("전송완료\n응답상세내용: ", res)
     console.table(res)
+    getDataAsync(res);
   } catch(err) {
     console.error("서버에 이상이 있습니다\n오류상세내용: ", err)
   }
@@ -42,16 +47,23 @@ const getDataAsync = async () => {
 }
 
 const inputDataAxios = async () => {
-  return await axios.post('http://localhost:3000/member', {
-    name: "유혁",
-    email: "yh@gmail.com"
-  })
+  let param = {
+    name: name.value,
+    email: email.value
+  }
+  if (param.name === name.value && param.email === email.value) {
+    name.value = '';
+    email.value = '';
+    isInputMode.value = false;
+  }
+  return await axios.post('http://localhost:3000/member', param)
 }
 
 const getDataSuccessCallback = (res) => {
+  console.log("res: ", res)
   const members = res.data
  let htmlContent = `
-    <table class="table ms-3 me-3">
+    <table class="table ms-3">
       <tr>
         <th>Id</th>
         <th>Name</th>
@@ -69,13 +81,25 @@ const getDataSuccessCallback = (res) => {
     table.value.innerHTML = htmlContent;
 }
 
+
+
 </script>
 
 <template>
-  <button @click="inputDataAsync" class="btn btn-primary ms-3">데이터 입력</button>
-  <button @click="getDataAsync" class="btn btn-success ms-3">데이터 가져오기</button>
-  <div ref="table">
-
+  <div class="container">
+    <button @click="isInputMode = true" class="btn btn-primary ms-3">데이터 입력</button>
+    <button @click="getDataAsync" class="btn btn-success ms-3">데이터 가져오기</button>
+    <div v-show="isInputMode">
+      <form autocomplete="off">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" v-model="name">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" v-model="email">
+        <button type="button" class="btn btn-success" @click="inputDataAsync">입력 확인</button>
+        <button type="button" class="btn btn-secondary" @click="isInputMode = false">취소</button>
+      </form>
+    </div>
+    <div ref="table"></div>
   </div>
 </template>
 
