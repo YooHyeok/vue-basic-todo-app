@@ -8,7 +8,7 @@ const name = ref('')
 const email = ref('')
 
 /* ===================== propmise async await ===================== */
-const inputDataAsync = async () => {
+const inputData = async () => {
   try {
     let param = {
       name: name.value,
@@ -16,18 +16,17 @@ const inputDataAsync = async () => {
     }
     const res = await axios.post('http://localhost:3000/member', param);
     console.debug("전송완료\n응답상세내용: ", res)
-    console.table(res)
     name.value = '';
     email.value = '';
     isInputMode.value = false;
-    getDataAsync(res);
+    getData();
   } catch(err) {
     console.error("서버에 이상이 있습니다\n오류상세내용: ", err)
   }
   console.log("비동기적 호출")
 }
 
-const getDataAsync = async () => {
+const getData = async () => {
   try {
     const res = await axios.get('http://localhost:3000/member')
     const members = res.data
@@ -60,14 +59,14 @@ const getDataAsync = async () => {
 <template>
   <div class="container">
     <button @click="isInputMode = true" class="btn btn-primary ms-3">데이터 입력</button>
-    <button @click="getDataAsync" class="btn btn-success ms-3">데이터 가져오기</button>
+    <button @click="getData" class="btn btn-success ms-3">데이터 가져오기</button>
     <div v-show="isInputMode">
       <form autocomplete="off">
         <label class="form-label">Name</label>
         <input type="text" class="form-control" v-model="name">
         <label class="form-label">Email</label>
         <input type="text" class="form-control" v-model="email">
-        <button type="button" class="btn btn-success" @click="inputDataAsync">입력 확인</button>
+        <button type="button" class="btn btn-success" @click="inputData">입력 확인</button>
         <button type="button" class="btn btn-secondary" @click="isInputMode = false">취소</button>
       </form>
     </div>

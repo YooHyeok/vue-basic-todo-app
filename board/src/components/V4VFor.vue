@@ -17,11 +17,10 @@ const inputData = async () => {
     }
     const res = await axios.post('http://localhost:3000/member', param);
     console.debug("전송완료\n응답상세내용: ", res)
-    console.table(res)
     name.value = '';
     email.value = '';
     isInputMode.value = false;
-    getData(res);
+    getData();
   } catch(err) {
     console.error("서버에 이상이 있습니다\n오류상세내용: ", err)
   }
