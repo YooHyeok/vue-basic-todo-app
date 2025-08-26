@@ -1,4 +1,4 @@
-# Vue(2/3) 기본 및 todo 프로젝트
+# Vue(2/3) 예제 및 활용
 ## [유투브](https://youtube.com/playlist?list=PLTb3qGCzYjS1lkhdZL1z4uZJ72F7b5gIr&si=hwwLjHA5L2zxzFW4) 참조
 
 ## 개발환경 설치
@@ -143,12 +143,16 @@ html 태그로 구성되는 `<template></template>` 영역과 Vue의 문법 기�
 <br>
 
 
-## [v01/README.md](v01/README.md)
+## 프로젝트 종류 (vite vue3)
 
-## 템플릿
-<details>
-<summary>접기/펼치기</summary>
-<br>
-
-</details>
-<br>
+### 1. `v01` : vue 프로젝트 초기화 및 스케폴딩 예제
+### 2. `v02` : vue2 options API 예제  
+### 3. `todo` : vue2 Options API 기반 todo 앱  
+  사용한 npm 의존성 라이브러리: **uuid**
+### 4. `v03` : vue3 Composition(Setup) API 예제
+### 5. `board` :   vue3 Composition(Setup) API 기반 board 앱  
+  사용한 npm 의존성 라이브러리: **json-server**, **axios**, **bootstrap**
+### 6. `router` :   vue3 Composition(Setup) API 기반 vue-router 예제  
+사용한 npm 의존성 라이브러리: **vue-router**
+### 7. `pinia` :   vue3 Composition(Setup) API 기반 pinia 예제  
+사용한 npm 의존성 라이브러리: **pinia**
