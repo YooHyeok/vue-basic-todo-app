@@ -59,29 +59,32 @@ const inputDataAxios = async () => {
   return await axios.post('http://localhost:3000/member', param)
 }
 
+const members = ref([])
+
 const getDataSuccessCallback = (res) => {
   console.log("res: ", res)
-  const members = res.data
- let htmlContent = `
+  members.value = res.data
+  return;
+  let htmlContent = `
     <table class="table ms-3">
       <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Email</th>
+        <th>테이블 종류: innerHTML </th>
       </tr>`
-    members.forEach(member => {
+    members.value.forEach(member => {
       htmlContent += `
       <tr>
         <td>${member.id}</td>
         <td>${member.name}</td>
         <td>${member.email}</td>
+        <td></td>
       </tr>`
     })
     htmlContent += `</table>`
     table.value.innerHTML = htmlContent;
 }
-
-
 
 </script>
 
@@ -99,7 +102,26 @@ const getDataSuccessCallback = (res) => {
         <button type="button" class="btn btn-secondary" @click="isInputMode = false">취소</button>
       </form>
     </div>
-    <div ref="table"></div>
+    <div ref="table">
+      <table class="table ms-3" v-show="members.length > 0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>테이블 종류: template v-for </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="member in members">
+            <td>{{ member.id }}</td>
+            <td>{{ member.name }}</td>
+            <td>{{ member.email }}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
