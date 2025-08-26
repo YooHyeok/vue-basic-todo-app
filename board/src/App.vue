@@ -1,128 +1,15 @@
 <script setup>
-import axios from 'axios'
-import { ref } from 'vue'
-
-const table = ref(null)
-const isInputMode = ref(false)
-const name = ref('')
-const email = ref('')
-
-/* ===================== propmise then catch ===================== */
-const inputData = () => {
-  inputDataAxios()
-  .then(res => {
-    console.debug("전송완료\n응답상세내용: ", res)
-    console.table(res)
-    getData();
-  })
-  .catch(err => console.error("서버에 이상이 있습니다\n오류상세내용: ", err))
-  console.log("비동기적 호출")
-}
-
-const getData = () => {
-  axios.get('http://localhost:3000/member')
-  .then(getDataSuccessCallback)
-  .error(err => console.error(err))
-}
-/* ===================== propmise async await ===================== */
-const inputDataAsync = async () => {
-  try {
-    const res = await inputDataAxios();
-    console.debug("전송완료\n응답상세내용: ", res)
-    console.table(res)
-    getDataAsync(res);
-  } catch(err) {
-    console.error("서버에 이상이 있습니다\n오류상세내용: ", err)
-  }
-  console.log("비동기적 호출")
-}
-
-const getDataAsync = async () => {
-  try {
-    const res = await axios.get('http://localhost:3000/member')
-    getDataSuccessCallback(res);
-  } catch(err) {
-    console.error(err)
-  }
-}
-
-const inputDataAxios = async () => {
-  let param = {
-    name: name.value,
-    email: email.value
-  }
-  if (param.name === name.value && param.email === email.value) {
-    name.value = '';
-    email.value = '';
-    isInputMode.value = false;
-  }
-  return await axios.post('http://localhost:3000/member', param)
-}
-
-const members = ref([])
-
-const getDataSuccessCallback = (res) => {
-  console.log("res: ", res)
-  members.value = res.data
-  return;
-  let htmlContent = `
-    <table class="table ms-3">
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>테이블 종류: innerHTML </th>
-      </tr>`
-    members.value.forEach(member => {
-      htmlContent += `
-      <tr>
-        <td>${member.id}</td>
-        <td>${member.name}</td>
-        <td>${member.email}</td>
-        <td></td>
-      </tr>`
-    })
-    htmlContent += `</table>`
-    table.value.innerHTML = htmlContent;
-}
-
+import V1AxiosThenCatch from '@/components/V1AxiosThenCatch.vue';
+import V2AxiosAsyncAwait from '@/components/V2AxiosAsyncAwait.vue';
+import V3InputSave from '@/components/V3InputSave.vue';
+import V4VFor from '@/components/V4VFor.vue';
 </script>
 
 <template>
-  <div class="container">
-    <button @click="isInputMode = true" class="btn btn-primary ms-3">데이터 입력</button>
-    <button @click="getDataAsync" class="btn btn-success ms-3">데이터 가져오기</button>
-    <div v-show="isInputMode">
-      <form autocomplete="off">
-        <label class="form-label">Name</label>
-        <input type="text" class="form-control" v-model="name">
-        <label class="form-label">Email</label>
-        <input type="text" class="form-control" v-model="email">
-        <button type="button" class="btn btn-success" @click="inputDataAsync">입력 확인</button>
-        <button type="button" class="btn btn-secondary" @click="isInputMode = false">취소</button>
-      </form>
-    </div>
-    <div ref="table">
-      <table class="table ms-3" v-show="members.length > 0">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>테이블 종류: template v-for </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="member in members">
-            <td>{{ member.id }}</td>
-            <td>{{ member.name }}</td>
-            <td>{{ member.email }}</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <!-- <V1AxiosThenCatch /> -->
+  <!-- <V2AxiosAsyncAwait /> -->
+  <!-- <V3InputSave /> -->
+  <V4VFor />
 </template>
 
 <style scoped>
