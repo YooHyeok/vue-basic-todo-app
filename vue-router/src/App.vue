@@ -1,6 +1,6 @@
 <script setup>
-import TheHeader from '@/layouts/TheHeader.vue';
-import TheBody from '@/layouts/TheBody.vue';
+import TheHeader from '@/layouts/TheHeader';
+import TheBody from '@/layouts/TheBody';
 </script>
 
 <template>
