@@ -1,0 +1,4 @@
+.router-link-active {/* 선택된 router-link에 부여되는 클래스명 */
+  font-weight: bold;
+  color: red;
+}
