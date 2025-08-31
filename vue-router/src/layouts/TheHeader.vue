@@ -1,16 +1,21 @@
 <template>
   <p>Header</p>
   <p>
+    <strong>anchor: </strong>
     <!-- window의 location을 통한 페이지 전환: 로딩 발생 -->
     <a href="/">Home</a> |
     <a href="/about">About</a> |
-    <a href="/hello">Hello</a>
+    <a href="/hello">Hello</a> |
+    <a href="/product">Product</a> |
+    <a href="/company">Company</a>
   </p>
   <p>
+    <strong>router: </strong>
     <!-- vue-router를 통한 페이지 전환: router-view 영역에 컴포넌트만 동적으로 교체 -->
     <router-link to="/" active-class="on">Home</router-link> |
     <router-link to="/about" active-class="on">About</router-link> |
-    <router-link to="/hello" active-class="on">Hello</router-link>
+    <router-link to="/hello" active-class="on">Hello</router-link> |
+    <router-link to="/product/babo?lang=maerong" active-class="on">Product</router-link>
   </p>
 </template>
 <style scoped>
