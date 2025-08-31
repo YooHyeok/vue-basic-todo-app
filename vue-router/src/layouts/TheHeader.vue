@@ -15,7 +15,8 @@
     <router-link to="/" active-class="on">Home</router-link> |
     <router-link to="/about" active-class="on">About</router-link> |
     <router-link to="/hello" active-class="on">Hello</router-link> |
-    <router-link to="/product/babo?lang=maerong" active-class="on">Product</router-link>
+    <router-link to="/product/A01?lang=kr" active-class="on">ProductA01</router-link> |
+    <router-link :to="{ name: 'ProductPage', params: {id: 'A02'}, query: {lang: 'en'} }" active-class="on">ProductA02</router-link>
   </p>
 </template>
 <style scoped>
