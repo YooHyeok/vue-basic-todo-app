@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import AboutView from "@/components/AboutView";
 import HelloView from "@/components/HelloView";
 import HomeView from "@/components/HomeView";
+import ProductView from "@/components/ProductView";
 
 const routes = [
   {
@@ -16,8 +17,13 @@ const routes = [
   },
   {
     path: '/hello',
-    name: 'HelloPage',
+    name: 'HelloPage', /* router-link에서 name기반 라우팅을 적용했을 경우 path가 변경되더라도 작동된다. */
     component: HelloView
+  },
+  {
+    path: '/product/:id?', /* 동적 경로 매칭 (?를 붙힐 경우 /product로 요청이 올 경우 ''로 값을 받게 된다.)  */
+    name: 'ProductPage',
+    component: ProductView
   },
 ]
 
