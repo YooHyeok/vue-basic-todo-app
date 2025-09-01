@@ -7,8 +7,9 @@ import NotFoundView from "@/components/NotFoundView";
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'HomePage', /* 주로 path가 /:id 와 같이 동적파라미터(필수)로 되어있을 경우 push를 호출할 때 name을 사용하면 편하다. */
+    alias: '/',
     component: HomeView
   },
   {
