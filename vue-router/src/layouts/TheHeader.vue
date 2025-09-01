@@ -12,11 +12,12 @@
   <p>
     <strong>router: </strong>
     <!-- vue-router를 통한 페이지 전환: router-view 영역에 컴포넌트만 동적으로 교체 -->
-    <router-link to="/" active-class="on">Home</router-link> |
+    <router-link to="/home" active-class="on">Home</router-link> |
     <router-link to="/about" active-class="on">About</router-link> |
     <router-link to="/hello" active-class="on">Hello</router-link> |
     <router-link to="/product/A01?lang=kr" active-class="on">ProductA01</router-link> |
-    <router-link :to="{ name: 'ProductPage', params: {id: 'A02'}, query: {lang: 'en'} }" active-class="on">ProductA02</router-link>
+    <router-link :to="{ name: 'ProductPage', params: {id: 'A02'}, query: {lang: 'en'} }" active-class="on">ProductA02</router-link> |
+    <router-link to="/company" active-class="on">Company</router-link> <!-- 중첩 라우팅 -->
   </p>
 </template>
 <style scoped>
