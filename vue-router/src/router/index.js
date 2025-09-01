@@ -3,6 +3,7 @@ import AboutView from "@/components/AboutView";
 import HelloView from "@/components/HelloView";
 import HomeView from "@/components/HomeView";
 import ProductView from "@/components/ProductView";
+import NotFoundView from "@/components/NotFoundView";
 
 const routes = [
   {
@@ -25,6 +26,12 @@ const routes = [
     name: 'ProductPage',
     component: ProductView
   },
+  {
+    path: '/:pathMatch(.*)*', /* route.params.pathMatch: 모든 경로/404 Not found 라우트 */
+    name: 'NotFoundPage',
+    component: NotFoundView
+  },
+  /* 중첩 라우팅 시작 */
 ]
 
 const router = createRouter({
