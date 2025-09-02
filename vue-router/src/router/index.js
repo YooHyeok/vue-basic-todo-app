@@ -15,7 +15,7 @@ const routes = [
   {
     path: '/about',
     name: 'AboutPage', /* /about/:id일 경우 push('/about/pk') 혹은 push({name:'AboutPage', params{id: 'pk'}}) 형태로 호출 */
-    component: AboutView
+    component: AboutView,
   },
   {
     path: '/hello',
@@ -33,6 +33,29 @@ const routes = [
     component: NotFoundView
   },
   /* 중첩 라우팅 시작 */
+  {
+    path: '/company', /* route.params.pathMatch: 모든 경로/404 Not found 라우트 */
+    name: 'CompanyPage',
+    component: () => import('@/components/company/CompanyView'),
+    children: [
+      {
+        path: 'intro',
+        alias: '',
+        name: 'company-intro',
+        component: () => import('@/components/company/IntroView.vue'),
+      },
+      {
+        path: 'map',
+        name: 'company-map',
+        component: () => import('@/components/company/MapView.vue'),
+      },
+      {
+        path: 'history',
+        name: 'company-history',
+        component: () => import('@/components/company/HistoryView.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
