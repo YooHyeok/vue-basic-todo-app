@@ -7,6 +7,12 @@
     <router-link to="/company/map" active-class="on">오시는 길</router-link> |
     <router-link to="/company/history" active-class="on">회사 연혁</router-link>
   </p>
+  <p>
+    <strong>name: </strong>
+    <router-link :to="{ name: 'company-intro'}" active-class="on">회사 소개</router-link> |
+    <router-link :to="{ name: 'company-map'}" active-class="on">오시는 길</router-link> |
+    <router-link :to="{ name: 'company-history'}" active-class="on">회사 연혁</router-link>
+  </p>
   
   <router-view></router-view>
 </template>
