@@ -13,6 +13,10 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/aboutus',
+    redirect: '/about'
+  },
+  {
     path: '/about',
     name: 'AboutPage', /* /about/:id일 경우 push('/about/pk') 혹은 push({name:'AboutPage', params{id: 'pk'}}) 형태로 호출 */
     component: AboutView
