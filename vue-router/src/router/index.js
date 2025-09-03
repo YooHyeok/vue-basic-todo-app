@@ -15,7 +15,7 @@ const routes = [
   {
     path: '/about',
     name: 'AboutPage', /* /about/:id일 경우 push('/about/pk') 혹은 push({name:'AboutPage', params{id: 'pk'}}) 형태로 호출 */
-    component: AboutView,
+    component: AboutView
   },
   {
     path: '/hello',
@@ -42,19 +42,31 @@ const routes = [
         path: 'intro',
         alias: '',
         name: 'company-intro',
-        component: () => import('@/components/company/IntroView.vue'),
+        components: {
+          header: () => import('@/components/company/HeaderView.vue'),
+          default: () => import('@/components/company/IntroView.vue'),
+          footer: () => import('@/components/company/FooterView.vue'),
+        }
       },
       {
         path: 'map',
         name: 'company-map',
-        component: () => import('@/components/company/MapView.vue'),
+        components: {
+          header: () => import('@/components/company/HeaderView.vue'),
+          default: () => import('@/components/company/MapView.vue'),
+          footer: () => import('@/components/company/FooterView.vue'),
+        }
       },
       {
         path: 'history',
         name: 'company-history',
-        component: () => import('@/components/company/HistoryView.vue'),
+        components: {
+          header: () => import('@/components/company/HeaderView.vue'),
+          default: () => import('@/components/company/HistoryView.vue'),
+          footer: () => import('@/components/company/FooterView.vue'),
+        }
       },
-    ],
+    ]
   },
 ]
 
