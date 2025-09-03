@@ -14,5 +14,7 @@
     <router-link :to="{ name: 'company-history'}" active-class="on">회사 연혁</router-link>
   </p>
   
-  <router-view></router-view>
+  <router-view name="header"></router-view>
+  <router-view></router-view> <!-- default 영역 -->
+  <router-view name="footer"></router-view>
 </template>
