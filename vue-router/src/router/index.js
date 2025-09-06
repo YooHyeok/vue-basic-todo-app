@@ -79,4 +79,11 @@ const router = createRouter({
   routes
 })
 
+/* 내비게이션 전역 가드 */
+router.beforeEach((to, from, next) => {
+  console.log("[G]beforeEach-to: ", to)
+  console.log("[G]beforeEach-from: ", from)
+  if (to.fullPath !== '/company') next();
+})
+
 export default router;
