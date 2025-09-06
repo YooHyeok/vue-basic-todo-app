@@ -11,8 +11,14 @@
 스크립트에서 접근: useRouter
  -->
 <script setup>
-import { useRoute, useRouter } from 'vue-router';
+import { onBeforeRouteLeave, useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const router = useRouter();
+
+onBeforeRouteLeave((to, from, next) => {
+  console.log("[C]onBeforeRouteLeave - to: ", to)
+  console.log("[C]onBeforeRouteLeave - from: ", from)
+  if (to.fullPath !== '/about') next();
+})
 </script>
