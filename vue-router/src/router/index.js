@@ -19,7 +19,12 @@ const routes = [
   {
     path: '/about',
     name: 'AboutPage', /* /about/:id일 경우 push('/about/pk') 혹은 push({name:'AboutPage', params{id: 'pk'}}) 형태로 호출 */
-    component: AboutView
+    component: AboutView,
+    beforeEnter: (to, from, next) => {
+      console.log("[R]beforeEnter-to: ", to)
+      console.log("[R]beforeEnter-from: ", from)
+      next();
+    }
   },
   {
     path: '/hello',
